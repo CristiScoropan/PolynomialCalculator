@@ -113,7 +113,7 @@ public class PolynomialCalculatorGUI extends JFrame {
 
     private ArrayList<Polynomial> readPolynomials() {
         ArrayList<Polynomial> polynomials = new ArrayList<>();
-        String[] terms1 = polynomial1Field.getText().split("\\+");
+        String[] terms1 = polynomial1Field.getText().split( "\\+");
         String[] terms2 = polynomial2Field.getText().split("\\+");
         Polynomial polynomial1 = new Polynomial();
         Polynomial polynomial2 = new Polynomial();
@@ -181,7 +181,7 @@ public class PolynomialCalculatorGUI extends JFrame {
             ArrayList<Polynomial> polynomials = readPolynomials();
             if (polynomials.size() == 2) {
                 Operations operations = new Operations();
-                Polynomial result = operations.add(polynomials.get(0), polynomials.get(1));
+                Polynomial result = Operations.add(polynomials.get(0), polynomials.get(1));
                 resultArea.setText(result.toString());
             } else {
                 JOptionPane.showMessageDialog(this, "Please enter both polynomials");
