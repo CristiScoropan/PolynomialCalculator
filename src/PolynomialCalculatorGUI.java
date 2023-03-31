@@ -113,8 +113,9 @@ public class PolynomialCalculatorGUI extends JFrame {
 
     private ArrayList<Polynomial> readPolynomials() {
         ArrayList<Polynomial> polynomials = new ArrayList<>();
-        String[] terms1 = polynomial1Field.getText().split( "\\+");
-        String[] terms2 = polynomial2Field.getText().split("\\+");
+
+        String[] terms1 = polynomial1Field.getText().replace("-","+-").split("\\+");
+        String[] terms2 = polynomial2Field.getText().replace("-","+-").split("\\+");
         Polynomial polynomial1 = new Polynomial();
         Polynomial polynomial2 = new Polynomial();
         try {
